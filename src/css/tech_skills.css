@@ -1,3 +1,96 @@
-.tech_skills {
-  padding: 10px 0;
+.tech-skills {
+  padding: 80px 0;
+}
+
+.tech-skills-container {
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100vw;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.marquee {
+  /* width: 100vw; */
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color);
+}
+
+.marquee__inner {
+  display: flex;
+  background-color: var(--tech-top);
+}
+
+.marquee__line {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 32px 0;
+  white-space: nowrap;
+  animation-name: marqueeLine;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background-color: var(--accet-green);
+  margin: 8px 24px;
+}
+
+.dot:last-child {
+  margin-right: 0;
+}
+
+.tilted {
+  transform: rotate(2deg);
+  background-color: var(--tech-bottom);
+  color: var(--accet-green);
+}
+
+.tilted .dot {
+  background-color: var(--color);
+}
+
+@media screen and (min-width: 768px) {
+  .marquee {
+    font-size: 36px;
+    line-height: 1.33;
+    letter-spacing: 0.01em;
+  }
+
+  .marquee__line {
+    padding: 40px 0;
+  }
 }
